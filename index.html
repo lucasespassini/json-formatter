@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Gambiarra</title>
+    <style></style>
+  </head>
+  <body>
+    <div class="box">
+      <textarea id="input"></textarea>
+      <button class="btn" onclick="gerarJson()">Gerar json</button>
+    </div>
+
+    <div class="box">
+      <pre id="jsonOutput" class="language-json"></pre>
+      <button class="btn" onclick="copiarJsonParaAreaDeTransferencia()">
+        Copiar
+      </button>
+    </div>
+  </body>
+  <script src="./index.js"></script>
+</html>
