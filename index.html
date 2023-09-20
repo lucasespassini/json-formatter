@@ -14,6 +14,80 @@
   </head>
   <body>
     <div class="box">
+      <h4>Tipo do relatório</h4>
+      <div id="tipoRelatorio">
+        <div>
+          <input
+            type="checkbox"
+            name="tipoRelatorio"
+            id="lancamentos"
+            value="lancamentos"
+            onchange="onChangeTipoRelatorio(this)"
+          />
+          <label for="lancamentos">Lançamentos</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="tipoRelatorio"
+            id="veiculo"
+            value="veiculo"
+            onchange="onChangeTipoRelatorio(this)"
+          />
+          <label for="veiculo">Veículo</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="tipoRelatorio"
+            id="associado"
+            value="associado"
+            onchange="onChangeTipoRelatorio(this)"
+          />
+          <label for="associado">Associados</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="tipoRelatorio"
+            id="atendimento"
+            value="atendimento"
+            onchange="onChangeTipoRelatorio(this)"
+          />
+          <label for="atendimento">Atendimento</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="tipoRelatorio"
+            id="eventos"
+            value="eventos"
+            onchange="onChangeTipoRelatorio(this)"
+          />
+          <label for="eventos">Eventos</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="tipoRelatorio"
+            id="boletos"
+            value="boletos"
+            onchange="onChangeTipoRelatorio(this)"
+          />
+          <label for="boletos">Boletos</label>
+        </div>
+        <div>
+          <input
+            type="checkbox"
+            name="tipoRelatorio"
+            id="mcv"
+            value="mcv"
+            onchange="onChangeTipoRelatorio(this)"
+          />
+          <label for="mcv">MCV</label>
+        </div>
+      </div>
+
       <textarea id="input"></textarea>
       <button class="btn" onclick="gerarJson()">Gerar json</button>
     </div>

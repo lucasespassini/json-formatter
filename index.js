@@ -1,5 +1,17 @@
+const onChangeTipoRelatorio = (checkbox) => {
+  const checkboxes = document.querySelectorAll('input[type="checkbox"][name="tipoRelatorio"]');
+
+  for (const item of checkboxes)
+    if (item !== checkbox)
+      item.checked = false;
+}
+
 const gerarJson = () => {
   const input = document.getElementById("input").value;
+  const checkboxes = document.getElementsByName("tipoRelatorio");
+
+  let tipoRelatorio = ''
+  checkboxes.forEach(item => item.checked === true && (tipoRelatorio = item.value))
 
   if (!input) {
     alert('Sem conteúdo!')
@@ -14,47 +26,52 @@ const gerarJson = () => {
     objetos.push({ key, valor });
   }
 
-  let tipoRelatorio = objetos.find(objeto => objeto['key'] === 'tipoRelatorio')
-  if (!tipoRelatorio) {
-    tipoRelatorio = objetos.find(objeto => objeto['key'] === 'dfsTitulo')
-  }
 
   let data
-  switch (tipoRelatorio.valor) {
+  switch (tipoRelatorio) {
+    case 'lancamentos':
+      data = {
+        url: {
+          key: "url",
+          valor: ""
+        },
+        tipo: { key: "tipo", valor: "1" }
+      }
+      break
     case 'veiculo':
       data = {
         url: {
           key: "url",
           valor: "https://marte.hinova.com.br/sga/sgav4_astran/relatorio/geraRelatorioVeiculo.php"
         },
-        tipo: {
-          key: "tipo",
-          valor: "2"
-        }
+        tipo: { key: "tipo", valor: "2" }
       }
       break
-    case 'associado':
+    case 'associados':
       data = {
         url: {
           key: "url",
           valor: "https://marte.hinova.com.br/sga/sgav4_astran/relatorio/geraRelatorioAssociado.php"
         },
-        tipo: {
-          key: "tipo",
-          valor: "2"
-        }
+        tipo: { key: "tipo", valor: "2" }
       }
       break
-    case 'RELATÓRIO DE BOLETOS':
+    case 'atendimento':
+      data = {
+        url: {
+          key: "url",
+          valor: ""
+        },
+        tipo: { key: "tipo", valor: "" }
+      }
+      break
+    case 'boletos':
       data = {
         url: {
           key: "url",
           valor: "https://marte.hinova.com.br/sga/sgav4_astran/relatorio/geraRelatorioBoleto.php"
         },
-        tipo: {
-          key: "tipo",
-          valor: "4"
-        }
+        tipo: { key: "tipo", valor: "4" }
       }
       break
   }
