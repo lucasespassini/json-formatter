@@ -27,7 +27,7 @@ const gerarJson = () => {
   );
 
   if (!input) {
-    alert("Sem conteúdo!");
+    alert("Sem conteúdo para gerar json!");
     return;
   }
 
@@ -131,7 +131,7 @@ const copiarJsonParaAreaDeTransferencia = () => {
   const jsonOutput = document.getElementById("jsonOutput").textContent;
 
   if (!jsonOutput) {
-    alert("Sem conteúdo!");
+    alert("Sem conteúdo para copiar!");
     return;
   }
 
