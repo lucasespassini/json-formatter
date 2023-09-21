@@ -10,7 +10,6 @@ const gerarJson = () => {
   const input = document.getElementById("input").value;
   const checkboxes = document.getElementsByName("tipoRelatorio");
 
-  console.log(checkboxes)
   let tipoRelatorio = "";
   checkboxes.forEach(
     (item) => item.checked === true && (tipoRelatorio = item.value)
