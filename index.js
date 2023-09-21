@@ -36,7 +36,7 @@ const gerarJson = () => {
 
   for (const linha of linhas) {
     const [key, valor] = linha.split(":");
-    objetos.push({ key, valor });
+    objetos.push({ key: key.trim(), valor: valor.trim() });
   }
 
   let data = { url: { key: "", valor: "" }, tipo: { key: "", valor: "" } };
