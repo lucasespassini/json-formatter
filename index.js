@@ -35,7 +35,7 @@ const gerarJson = () => {
   const linhas = input.split("\n");
 
   for (const linha of linhas) {
-    const [key, valor] = linha.split(": ");
+    const [key, valor] = linha.split(":");
     objetos.push({ key, valor });
   }
 
