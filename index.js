@@ -101,10 +101,10 @@ const gerarJson = () => {
         tipo: { key: "tipo", valor: "6" },
       };
       break;
+    default:
+      alert('Selecione um tipo de relatório!')
+      return
   }
-
-  objetos.push(data.url);
-  objetos.push(data.tipo);
 
   const relatorioJSON = JSON.stringify(objetos, null, 2);
   const jsonOutput = document.getElementById("jsonOutput");
