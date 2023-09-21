@@ -1,3 +1,14 @@
+const limpar = () => {
+  const checkboxes = document.querySelectorAll(
+    'input[type="checkbox"][name="tipoRelatorio"]'
+  );
+
+  for (const item of checkboxes) item.checked = false;
+
+  document.getElementById("input").value = "";
+  document.getElementById("jsonOutput").textContent = "";
+};
+
 const onChangeTipoRelatorio = (checkbox) => {
   const checkboxes = document.querySelectorAll(
     'input[type="checkbox"][name="tipoRelatorio"]'
@@ -35,7 +46,8 @@ const gerarJson = () => {
       data = {
         url: {
           key: "url",
-          valor: "https://marte.hinova.com.br/sga/sgav4_astran/mgf/relatorio/filtroRelatorioLancamento.php",
+          valor:
+            "https://marte.hinova.com.br/sga/sgav4_astran/mgf/relatorio/filtroRelatorioLancamento.php",
         },
         tipo: { key: "tipo", valor: "1" },
       };
@@ -101,12 +113,12 @@ const gerarJson = () => {
       };
       break;
     default:
-      alert('Selecione um tipo de relatório!')
-      return
+      alert("Selecione um tipo de relatório!");
+      return;
   }
 
-  objetos.push(data.url)
-  objetos.push(data.tipo)
+  objetos.push(data.url);
+  objetos.push(data.tipo);
 
   const relatorioJSON = JSON.stringify(objetos, null, 2);
   const jsonOutput = document.getElementById("jsonOutput");
