@@ -16,7 +16,19 @@
     <div class="box">
       <div style="display: flex; align-items: center; gap: 10px">
         <h4>Tipo do relatório</h4>
-        <button class="btn" style="font-size: .9rem; padding: 5px;" onclick="limpar()">Limpar</button>
+        <button
+          class="btn"
+          style="font-size: 0.9rem; padding: 5px"
+          onclick="limpar()"
+        >
+          Limpar
+        </button>
+        <a
+          href="/json-formatter.html"
+          class="btn btn-link"
+          style="font-size: 0.9rem; padding: 5px"
+          >Formatar JSON</a
+        >
       </div>
       <div id="tipoRelatorio">
         <div>
@@ -96,7 +108,7 @@
     </div>
 
     <div class="box">
-      <pre id="jsonOutput" class="language-json"></pre>
+      <pre id="jsonOutput"></pre>
       <button class="btn" onclick="copiarJsonParaAreaDeTransferencia()">
         Copiar
       </button>

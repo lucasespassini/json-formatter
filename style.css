@@ -2,14 +2,33 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: sans-serif;
 }
 
 body {
   width: 100vw;
   height: 100vh;
-  padding: 1rem;
+  padding: 1rem 5rem;
   display: flex;
   gap: 2rem;
+  color: #d6d3d1;
+  background-color: #020617;
+}
+
+::-webkit-scrollbar {
+  border-radius: 5px;
+  width: 10px; /* Remova as aspas das propriedades width */
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 5px;
+  width: 6px; /* Remova as aspas das propriedades width */
+  background: #ccc; /* Defina um fundo para a área de trilha (pode escolher outra cor) */
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 5px;
+  background: #334155; /* Defina uma cor de fundo para o indicador de rolagem */
 }
 
 .box {
@@ -33,11 +52,39 @@ body {
   height: 100%;
   resize: none;
   border-radius: 5px;
+  color: #d6d3d1;
+  background-color: #1e293b;
+  border: 0;
+  outline: none;
+  font-size: 1rem;
 }
 
 #jsonOutput {
+  padding: 1rem;
   height: 100%;
   border-radius: 5px;
+  background-color: #1e293b;
+  overflow: auto;
+}
+
+.json-key {
+  color: #ef4444;
+}
+
+.json-value {
+  color: #0284c7;
+}
+
+.json-string {
+  color: #16a34a;
+}
+
+.json-boolean {
+  color: #06b6d4;
+}
+
+.json-null {
+  color: #737373;
 }
 
 .btn {
@@ -49,6 +96,10 @@ body {
   background-color: #32a852;
   cursor: pointer;
   transition: .2s;
+}
+
+.btn-link {
+  text-decoration: none;
 }
 
 .btn:hover {

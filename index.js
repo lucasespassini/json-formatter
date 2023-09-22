@@ -122,10 +122,43 @@ const gerarJson = () => {
 
   const relatorioJSON = JSON.stringify(objetos, null, 2);
   const jsonOutput = document.getElementById("jsonOutput");
-  jsonOutput.textContent = relatorioJSON;
-
-  Prism.highlightElement(jsonOutput);
+  jsonOutput.innerHTML = syntaxHighlight(relatorioJSON);
 };
+
+const formatarJson = () => {
+  const input = document.getElementById("input").value;
+
+  try {
+    const objetoJSON = JSON.parse(input);
+    const relatorioJSON = JSON.stringify(objetoJSON, null, 2);
+    const jsonOutput = document.getElementById("jsonOutput");
+    jsonOutput.innerHTML = syntaxHighlight(relatorioJSON);
+  } catch (erro) {
+    alert("O JSON inserido não é válido. Por favor, insira um JSON válido.");
+  }
+}
+
+function syntaxHighlight(json) {
+  json = json.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+  return json.replace(
+    /("(\\u[a-zA-Z0-9]{4}|\\[^u]|[^\\"])*"(\s*:)?|\b(true|false|null)\b|-?\d+(?:\.\d*)?(?:[eE][+\-]?\d+)?)/g,
+    function (match) {
+      let cls = "json-value";
+      if (/^"/.test(match)) {
+        if (/:$/.test(match)) {
+          cls = "json-key";
+        } else {
+          cls = "json-string";
+        }
+      } else if (/true|false/.test(match)) {
+        cls = "json-boolean";
+      } else if (/null/.test(match)) {
+        cls = "json-null";
+      }
+      return '<span class="' + cls + '">' + match + '</span>';
+    }
+  );
+}
 
 const copiarJsonParaAreaDeTransferencia = () => {
   const jsonOutput = document.getElementById("jsonOutput").textContent;
