@@ -3,27 +3,46 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>JSON formatter</title>
+    <meta name="description" content="Ferramenta de Formatação de JSON" />
+    <meta name="author" content="Lucas Mendes Espassini" />
+    <meta name="keywords" content="formatter, json, formatter" />
+    <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/favicon.svg"
+      type="image/svg+xml"
+    />
+    <title>Formatter</title>
   </head>
-  <body>
-    <div class="box">
-      <a
-        href="/index.html"
-        class="btn btn-link"
-        style="font-size: 0.9rem; padding: 5px"
-        >Gerar JSON</a
-      >
-      <textarea id="input" spellcheck="false"></textarea>
-      <button class="btn" onclick="formatarJson()">Formatar json</button>
-    </div>
 
-    <div class="box">
-      <pre id="jsonOutput" class="language-json"></pre>
-      <button class="btn" onclick="copiarJsonParaAreaDeTransferencia()">
-        Copiar json
-      </button>
-    </div>
+  <body>
+    <header>
+      <img src="./assets/logo.svg" alt="logo da página" />
+      <h1>Ferramenta de Formatação de JSON</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="/index.html">Gerar JSON</a></li>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <article class="box-container">
+        <section class="box">
+          <textarea id="input" spellcheck="false"></textarea>
+          <button class="btn" onclick="formatarJson()">Formatar json</button>
+        </section>
+
+        <section class="box">
+          <pre id="jsonOutput"></pre>
+          <button class="btn" onclick="copiarJsonParaAreaDeTransferencia()">
+            Copiar
+          </button>
+        </section>
+      </article>
+    </main>
   </body>
-  <script src="./index.js"></script>
+  <script src="./scripts/index.js"></script>
 </html>

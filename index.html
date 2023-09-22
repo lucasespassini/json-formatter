@@ -3,116 +3,150 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
-    <title>Gambiarra</title>
+    <meta name="description" content="Ferramenta de Formatação de JSON" />
+    <meta name="author" content="Lucas Mendes Espassini" />
+    <meta name="keywords" content="formatter, json, formatter" />
+    <meta name="robots" content="index, follow" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <link
+      rel="shortcut icon"
+      href="./assets/favicon.svg"
+      type="image/svg+xml"
+    />
+    <title>Formatter</title>
   </head>
+
   <body>
-    <div class="container">
-      <div class="box-container">
-        <div class="box">
+    <header>
+      <img src="./assets/logo.svg" alt="logo da página" />
+      <h1>Ferramenta de Formatação de JSON</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="/json-formatter.html">Formatar JSON</a></li>
+      </ul>
+    </nav>
+
+    <main class="container">
+      <article class="box-container">
+        <section class="box">
           <div style="display: flex; align-items: center; gap: 10px">
-            <h4>Tipo do relatório</h4>
-            <button
-              class="btn"
-              style="font-size: 0.9rem; padding: 5px"
-              onclick="limpar()"
-            >
-              Limpar
-            </button>
-            <a
-              href="/json-formatter.html"
-              class="btn btn-link"
-              style="font-size: 0.9rem; padding: 5px"
-              >Formatar JSON</a
-            >
+            <h2>Tipo do relatório</h2>
           </div>
+
           <div id="tipoRelatorio">
-            <input
-              type="checkbox"
-              name="tipoRelatorio"
-              id="lancamentos"
-              value="lancamentos"
-              onchange="onChangeTipoRelatorio(this)"
-            />
-            <label for="lancamentos">Lançamentos</label>
+            <label for="lancamentos">
+              <div class="relatorio-item">
+                <input
+                  type="checkbox"
+                  name="tipoRelatorio"
+                  id="lancamentos"
+                  value="lancamentos"
+                  onchange="onChangeTipoRelatorio(this)"
+                />
+                <span class="checkmark"></span>
+                Lançamentos
+              </div>
+            </label>
 
-            <input
-              type="checkbox"
-              name="tipoRelatorio"
-              id="veiculo"
-              value="veiculo"
-              onchange="onChangeTipoRelatorio(this)"
-            />
-            <label for="veiculo">Veículo</label>
+            <label for="veiculo">
+              <div class="relatorio-item">
+                <input
+                  type="checkbox"
+                  name="tipoRelatorio"
+                  id="veiculo"
+                  value="veiculo"
+                  onchange="onChangeTipoRelatorio(this)"
+                />
+                <span class="checkmark"></span>
+                Veículo
+              </div>
+            </label>
 
-            <input
-              type="checkbox"
-              name="tipoRelatorio"
-              id="associado"
-              value="associado"
-              onchange="onChangeTipoRelatorio(this)"
-            />
-            <label for="associado">Associados</label>
+            <label for="associado">
+              <div class="relatorio-item">
+                <input
+                  type="checkbox"
+                  name="tipoRelatorio"
+                  id="associado"
+                  value="associado"
+                  onchange="onChangeTipoRelatorio(this)"
+                />
+                <span class="checkmark"></span>
+                Associados
+              </div>
+            </label>
 
-            <input
-              type="checkbox"
-              name="tipoRelatorio"
-              id="atendimento"
-              value="atendimento"
-              onchange="onChangeTipoRelatorio(this)"
-            />
-            <label for="atendimento">Atendimento</label>
+            <label for="atendimento">
+              <div class="relatorio-item">
+                <input
+                  type="checkbox"
+                  name="tipoRelatorio"
+                  id="atendimento"
+                  value="atendimento"
+                  onchange="onChangeTipoRelatorio(this)"
+                />
+                <span class="checkmark"></span>
+                Atendimento
+              </div>
+            </label>
 
-            <input
-              type="checkbox"
-              name="tipoRelatorio"
-              id="eventos"
-              value="eventos"
-              onchange="onChangeTipoRelatorio(this)"
-            />
-            <label for="eventos">Eventos</label>
+            <label for="eventos">
+              <div class="relatorio-item">
+                <input
+                  type="checkbox"
+                  name="tipoRelatorio"
+                  id="eventos"
+                  value="eventos"
+                  onchange="onChangeTipoRelatorio(this)"
+                />
+                <span class="checkmark"></span>
+                Eventos
+              </div>
+            </label>
 
-            <input
-              type="checkbox"
-              name="tipoRelatorio"
-              id="boletos"
-              value="boletos"
-              onchange="onChangeTipoRelatorio(this)"
-            />
-            <label for="boletos">Boletos</label>
+            <label for="boletos">
+              <div class="relatorio-item">
+                <input
+                  type="checkbox"
+                  name="tipoRelatorio"
+                  id="boletos"
+                  value="boletos"
+                  onchange="onChangeTipoRelatorio(this)"
+                />
+                <span class="checkmark"></span>
+                Boletos
+              </div>
+            </label>
 
-            <input
-              type="checkbox"
-              name="tipoRelatorio"
-              id="mcv"
-              value="mcv"
-              onchange="onChangeTipoRelatorio(this)"
-            />
-            <label for="mcv">MCV</label>
+            <label for="mcv">
+              <div class="relatorio-item">
+                <input
+                  type="checkbox"
+                  name="tipoRelatorio"
+                  id="mcv"
+                  value="mcv"
+                  onchange="onChangeTipoRelatorio(this)"
+                />
+                <span class="checkmark"></span>
+                MCV
+              </div>
+            </label>
           </div>
 
           <textarea id="input" spellcheck="false"></textarea>
           <button class="btn" onclick="gerarJson()">Gerar json</button>
-        </div>
+        </section>
 
-        <div class="box">
+        <section class="box">
           <pre id="jsonOutput"></pre>
           <button class="btn" onclick="copiarJsonParaAreaDeTransferencia()">
             Copiar
           </button>
-        </div>
-      </div>
-
-      <div class="github">
-        <a
-          href="https://github.com/lucasespassini/json-formatter"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <img src="./github-mark.svg" />
-        </a>
-      </div>
-    </div>
+        </section>
+      </article>
+    </main>
   </body>
-  <script src="./index.js"></script>
+  <script src="./scripts/index.js"></script>
 </html>
