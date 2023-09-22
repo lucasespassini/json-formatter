@@ -3,114 +3,115 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/themes/prism.min.css"
-    />
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.25.0/prism.min.js"></script>
     <link rel="stylesheet" href="style.css" />
     <title>Gambiarra</title>
   </head>
   <body>
-    <div class="box">
-      <div style="display: flex; align-items: center; gap: 10px">
-        <h4>Tipo do relatório</h4>
-        <button
-          class="btn"
-          style="font-size: 0.9rem; padding: 5px"
-          onclick="limpar()"
-        >
-          Limpar
-        </button>
+    <div class="container">
+      <div class="box-container">
+        <div class="box">
+          <div style="display: flex; align-items: center; gap: 10px">
+            <h4>Tipo do relatório</h4>
+            <button
+              class="btn"
+              style="font-size: 0.9rem; padding: 5px"
+              onclick="limpar()"
+            >
+              Limpar
+            </button>
+            <a
+              href="/json-formatter.html"
+              class="btn btn-link"
+              style="font-size: 0.9rem; padding: 5px"
+              >Formatar JSON</a
+            >
+          </div>
+          <div id="tipoRelatorio">
+            <input
+              type="checkbox"
+              name="tipoRelatorio"
+              id="lancamentos"
+              value="lancamentos"
+              onchange="onChangeTipoRelatorio(this)"
+            />
+            <label for="lancamentos">Lançamentos</label>
+
+            <input
+              type="checkbox"
+              name="tipoRelatorio"
+              id="veiculo"
+              value="veiculo"
+              onchange="onChangeTipoRelatorio(this)"
+            />
+            <label for="veiculo">Veículo</label>
+
+            <input
+              type="checkbox"
+              name="tipoRelatorio"
+              id="associado"
+              value="associado"
+              onchange="onChangeTipoRelatorio(this)"
+            />
+            <label for="associado">Associados</label>
+
+            <input
+              type="checkbox"
+              name="tipoRelatorio"
+              id="atendimento"
+              value="atendimento"
+              onchange="onChangeTipoRelatorio(this)"
+            />
+            <label for="atendimento">Atendimento</label>
+
+            <input
+              type="checkbox"
+              name="tipoRelatorio"
+              id="eventos"
+              value="eventos"
+              onchange="onChangeTipoRelatorio(this)"
+            />
+            <label for="eventos">Eventos</label>
+
+            <input
+              type="checkbox"
+              name="tipoRelatorio"
+              id="boletos"
+              value="boletos"
+              onchange="onChangeTipoRelatorio(this)"
+            />
+            <label for="boletos">Boletos</label>
+
+            <input
+              type="checkbox"
+              name="tipoRelatorio"
+              id="mcv"
+              value="mcv"
+              onchange="onChangeTipoRelatorio(this)"
+            />
+            <label for="mcv">MCV</label>
+          </div>
+
+          <textarea id="input" spellcheck="false"></textarea>
+          <button class="btn" onclick="gerarJson()">Gerar json</button>
+        </div>
+
+        <div class="box">
+          <pre id="jsonOutput"></pre>
+          <button class="btn" onclick="copiarJsonParaAreaDeTransferencia()">
+            Copiar
+          </button>
+        </div>
+      </div>
+
+      <div class="github">
         <a
-          href="/json-formatter.html"
-          class="btn btn-link"
-          style="font-size: 0.9rem; padding: 5px"
-          >Formatar JSON</a
+          href="https://github.com/lucasespassini/json-formatter"
+          target="_blank"
+          rel="noopener noreferrer"
         >
+          <img src="./github-mark.svg" />
+        </a>
       </div>
-      <div id="tipoRelatorio">
-        <div>
-          <input
-            type="checkbox"
-            name="tipoRelatorio"
-            id="lancamentos"
-            value="lancamentos"
-            onchange="onChangeTipoRelatorio(this)"
-          />
-          <label for="lancamentos">Lançamentos</label>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            name="tipoRelatorio"
-            id="veiculo"
-            value="veiculo"
-            onchange="onChangeTipoRelatorio(this)"
-          />
-          <label for="veiculo">Veículo</label>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            name="tipoRelatorio"
-            id="associado"
-            value="associado"
-            onchange="onChangeTipoRelatorio(this)"
-          />
-          <label for="associado">Associados</label>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            name="tipoRelatorio"
-            id="atendimento"
-            value="atendimento"
-            onchange="onChangeTipoRelatorio(this)"
-          />
-          <label for="atendimento">Atendimento</label>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            name="tipoRelatorio"
-            id="eventos"
-            value="eventos"
-            onchange="onChangeTipoRelatorio(this)"
-          />
-          <label for="eventos">Eventos</label>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            name="tipoRelatorio"
-            id="boletos"
-            value="boletos"
-            onchange="onChangeTipoRelatorio(this)"
-          />
-          <label for="boletos">Boletos</label>
-        </div>
-        <div>
-          <input
-            type="checkbox"
-            name="tipoRelatorio"
-            id="mcv"
-            value="mcv"
-            onchange="onChangeTipoRelatorio(this)"
-          />
-          <label for="mcv">MCV</label>
-        </div>
-      </div>
-
-      <textarea id="input" spellcheck="false"></textarea>
-      <button class="btn" onclick="gerarJson()">Gerar json</button>
-    </div>
-
-    <div class="box">
-      <pre id="jsonOutput"></pre>
-      <button class="btn" onclick="copiarJsonParaAreaDeTransferencia()">
-        Copiar
-      </button>
     </div>
   </body>
   <script src="./index.js"></script>
