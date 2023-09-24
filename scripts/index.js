@@ -120,7 +120,7 @@ const gerarJson = () => {
   objetos.push(data.url);
   objetos.push(data.tipo);
 
-  const relatorioJSON = JSON.stringify(objetos, null, 2);
+  const relatorioJSON = JSON.stringify(objetos, null, 4);
   const jsonOutput = document.getElementById("jsonOutput");
   jsonOutput.innerHTML = syntaxHighlight(relatorioJSON);
 };
@@ -130,7 +130,7 @@ const formatarJson = () => {
 
   try {
     const objetoJSON = JSON.parse(input);
-    const relatorioJSON = JSON.stringify(objetoJSON, null, 2);
+    const relatorioJSON = JSON.stringify(objetoJSON, null, 4);
     const jsonOutput = document.getElementById("jsonOutput");
     jsonOutput.innerHTML = syntaxHighlight(relatorioJSON);
   } catch (erro) {
