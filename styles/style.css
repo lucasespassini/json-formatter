@@ -124,6 +124,11 @@ nav a {
   background-color: #334155;
 }
 
+.invalid-input {
+  border: 1px solid #dc2626 !important;
+  border-bottom: 1px solid transparent !important;
+}
+
 #input {
   height: 100%;
   padding: 1rem;
@@ -131,9 +136,10 @@ nav a {
   border-radius: 5px 5px 0 0;
   color: #d6d3d1;
   background-color: #1e293b;
-  border: 0;
+  border: 1px solid transparent;
   outline: none;
   font-size: 1rem;
+  transition: 0.2s;
 }
 
 #jsonOutput {

@@ -1,12 +1,17 @@
-const limpar = () => {
-  const checkboxes = document.querySelectorAll(
-    'input[type="checkbox"][name="tipoRelatorio"]'
-  );
+const verificaJsonValido = () => {
+  const input = document.getElementById("input");
+  const inputValue = input.value
+  try {
+    if (!inputValue) {
+      input.classList.remove('invalid-input')
+      return
+    }
 
-  for (const item of checkboxes) item.checked = false;
-
-  document.getElementById("input").value = "";
-  document.getElementById("jsonOutput").textContent = "";
+    JSON.parse(inputValue)
+    input.classList.remove('invalid-input')
+  } catch (error) {
+    input.classList.add('invalid-input')
+  }
 };
 
 const onChangeTipoRelatorio = (checkbox) => {
