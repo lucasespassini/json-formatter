@@ -73,6 +73,7 @@ nav a {
 .container {
   height: 100%;
   display: flex;
+  overflow: hidden;
 }
 
 .box-container {
