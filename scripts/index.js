@@ -17,6 +17,7 @@ const onChangeTipoRelatorio = (checkbox) => {
   for (const item of checkboxes) if (item !== checkbox) item.checked = false;
 };
 
+
 const gerarJson = () => {
   const input = document.getElementById("input").value;
   const checkboxes = document.getElementsByName("tipoRelatorio");

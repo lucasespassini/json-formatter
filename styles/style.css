@@ -1,6 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@500&display=swap");
 
-
 ::-webkit-scrollbar {
   border-radius: 5px;
   width: 10px;
@@ -38,39 +37,39 @@ body {
   display: flex;
   flex-direction: column;
   color: #d6d3d1;
-  background-color: #020617;
+  background-color: #10152c;
 }
 
 
 header {
-  /* background-color: #01050c; */
-  padding-top: 5px;
   display: flex;
+  justify-content: space-between;
+  padding-top: 5px;
   align-items: center;
-  gap: 1rem;
+  gap: 1rem;                                       
+
+}
+
+header .titulo {
+font-size: 1.8rem;
+background: -webkit-linear-gradient(#eee, #333);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }
 
 header .logo {
-  justify-content: space-between;
-  position: relative;
-  padding: 10px;
+  margin: 5px;
   width: 80px;
   height: 80px;
+  padding: 10px;
 }
 
 header .github {
-  justify-content: space-around;
+  margin: 5px;
+  width: 60px;
+  height: 60px;
   padding: 10px;
-  width: 80px;
-  height: 80px;
 }
-
-/* header h1 {
-  position: absolute;
-  padding: 5px 0;
-  font-size: 1rem;
-  text-align: center;
-} */
 
 nav {
   margin: 10px;
@@ -80,7 +79,7 @@ nav {
 }
 
 nav a {
-  font-size: 0.85rem;
+  font-size: 1.3rem;
 }
 
 .container {

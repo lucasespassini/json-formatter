@@ -1,5 +1,0 @@
-const color1 = '#39A038'
-const color2 = '#0CFFB6'
-const color3 = '#41D734'
-const color4 = '#1D1A1A'
-const color5 = '#1D1A2C'
