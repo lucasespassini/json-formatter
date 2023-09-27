@@ -37,37 +37,49 @@ body {
   display: flex;
   flex-direction: column;
   color: #d6d3d1;
-  background-color: #020617;
+  background-color: #10152c;
 }
+
 
 header {
-  padding-top: 5px;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
+  padding-top: 5px;
   align-items: center;
-  gap: 1rem;
+  gap: 1rem;                                       
+
 }
 
-header img {
-  width: 40px;
-  height: 40px;
-  border-radius: 999px;
+header .titulo {
+font-size: 1.8rem;
+background: -webkit-linear-gradient(#eee, #333);
+-webkit-background-clip: text;
+-webkit-text-fill-color: transparent;
 }
 
-header h1 {
-  padding: 5px 0;
-  font-size: 1rem;
-  text-align: center;
+header .logo {
+  margin: 5px;
+  width: 80px;
+  height: 80px;
+  padding: 10px;
+}
+
+header .github {
+  margin: 5px;
+  width: 60px;
+  height: 60px;
+  padding: 10px;
 }
 
 nav {
+  margin: 10px;
   display: flex;
   justify-content: center;
   gap: 10px;
 }
 
 nav a {
-  font-size: 0.85rem;
+  font-size: 1.3rem;
 }
 
 .container {
@@ -193,10 +205,12 @@ nav a {
 }
 
 footer {
-  padding-top: 0.5rem;
-  padding-bottom: 0.1rem;
-  display: flex;
   justify-content: center;
+  margin-top: 10px;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  display: flex;
+  font-size: 0.8rem;
 }
 
 footer img {
